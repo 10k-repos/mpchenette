@@ -1,0 +1,13 @@
+name: Print Deployment Environment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment name
+        run: |
+          ENVIRONMENT=prod
+          echo "Environment: $ENVIRONMENT"
