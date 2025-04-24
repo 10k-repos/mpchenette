@@ -2,9 +2,6 @@ name: Print Deployment Environment
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-       - main
 
 jobs:
   print-environment:
@@ -12,4 +9,5 @@ jobs:
     environment: prod
     steps:
       - name: Print environment name
-        run: echo "Environment: ${{ github.environment.name }}"
+        run: |
+          echo "Environment: ${{ job.environment }}"
