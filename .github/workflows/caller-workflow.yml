@@ -8,5 +8,5 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
-      environment: ${{ secrets.PROD_ENV_NAME }}
+      environment: ${{ vars.PROD_ENV_NAME }}
       # ^^ callers can reference an org secret ^^
