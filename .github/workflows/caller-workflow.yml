@@ -1,0 +1,12 @@
+name: caller-workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      environment: ${{ secrets.prod_env_name }}
+      # ^^ callers can reference an org secret ^^
