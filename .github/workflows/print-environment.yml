@@ -2,12 +2,14 @@ name: Print Deployment Environment
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+       - main
 
 jobs:
   print-environment:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
-      - name: Set environment name
-        run: |
-          ENVIRONMENT=prod
-          echo "Environment: $ENVIRONMENT"
+      - name: Print environment name
+        run: echo "Environment: ${{ github.environment.name }}"
