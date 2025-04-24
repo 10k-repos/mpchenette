@@ -6,6 +6,7 @@ on:
       environment: { required: true, type: string }
 
 jobs:
+  # validate passed in env value (which should be org var)
   validate-environment:
     runs-on: ubuntu-latest
     steps:
@@ -16,6 +17,7 @@ jobs:
           exit 1
 
   deploy:
+    # use the validated env value as our environment
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
