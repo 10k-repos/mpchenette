@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Print environment name
         run: |
-          echo "Environment: ${{ job.environment }}"
+          echo "Environment: ${{ job.environment.name }}"
